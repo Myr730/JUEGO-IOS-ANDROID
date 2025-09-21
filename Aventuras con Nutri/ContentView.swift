@@ -9,13 +9,19 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        AppTheme {
+            VStack(spacing: Spacing.s16) {
+                
+                // Texto con tipografía y color
+                Text(NSLocalizedString("home_title", comment: ""))
+                    .font(TypeScale.titleXL)
+                    .foregroundStyle(AppColor.primary)
+                
+                // Botón con tu componente
+                PrimaryButton(title: "btn_play")
+            }
+            .padding(Spacing.s24)
         }
-        .padding()
     }
 }
 
