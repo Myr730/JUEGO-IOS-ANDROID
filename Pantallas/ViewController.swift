@@ -8,6 +8,9 @@
 import UIKit
 
 class ViewController: UIViewController {
+    var currentIndex = 1
+    let maxNivel = 5
+    var nivel1ImageView = UIImageView(image: UIImage(named: "Nivel1"))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,19 +20,19 @@ class ViewController: UIViewController {
         backgroundImage.contentMode = .scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
         
-        let flechaImageView = UIImageView(image: UIImage(named: "flecha"))
-        flechaImageView.translatesAutoresizingMaskIntoConstraints = false
-        flechaImageView.isUserInteractionEnabled = true
-        flechaImageView.contentMode = .scaleAspectFit
-        view.addSubview(flechaImageView)
+        let flecha = UIImageView(image: UIImage(named: "flecha"))
+        flecha.translatesAutoresizingMaskIntoConstraints = false
+        flecha.isUserInteractionEnabled = true
+        flecha.contentMode = .scaleAspectFit
+        view.addSubview(flecha)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(goToAhorcado))
-        flechaImageView.addGestureRecognizer(tapGesture)
+        flecha.addGestureRecognizer(tapGesture)
         
         NSLayoutConstraint.activate([
-            flechaImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: view.bounds.height * 0.02),
-            flechaImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
-            flechaImageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.15),
-            flechaImageView.heightAnchor.constraint(equalTo: flechaImageView.widthAnchor)
+            flecha.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: view.bounds.height * 0.02),
+            flecha.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
+            flecha.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.15),
+            flecha.heightAnchor.constraint(equalTo: flecha.widthAnchor)
         ])
        
         
@@ -44,19 +47,23 @@ class ViewController: UIViewController {
             labelImageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7),
             labelImageView.heightAnchor.constraint(equalTo: labelImageView.widthAnchor, multiplier: 0.5)
         ])
-        
-        let nivel1ImageView = UIImageView(image: UIImage(named: "Nivel1"))
+
+        nivel1ImageView = UIImageView(image: UIImage(named: "Nivel\(currentIndex)"))
         nivel1ImageView.translatesAutoresizingMaskIntoConstraints = false
         nivel1ImageView.contentMode = .scaleAspectFit
+        nivel1ImageView.isUserInteractionEnabled = true
         view.addSubview(nivel1ImageView)
         
+        let clickGesture = UITapGestureRecognizer(target: self, action: #selector(handleNivelTap))
+        nivel1ImageView.addGestureRecognizer(clickGesture)
+
         NSLayoutConstraint.activate([
-            nivel1ImageView.topAnchor.constraint(equalTo: labelImageView.bottomAnchor, constant: view.bounds.height * 0.01),
+            nivel1ImageView.topAnchor.constraint(equalTo: labelImageView.bottomAnchor, constant: 10),
             nivel1ImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             nivel1ImageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
             nivel1ImageView.heightAnchor.constraint(equalTo: nivel1ImageView.widthAnchor, multiplier: 0.4)
         ])
-        
+
         let nutriImageView = UIImageView(image: UIImage(named: "nutri"))
         nutriImageView.translatesAutoresizingMaskIntoConstraints = false
         nutriImageView.contentMode = .scaleAspectFit
@@ -65,31 +72,38 @@ class ViewController: UIViewController {
         let izqImageView = UIImageView(image: UIImage(named: "IZQ"))
         izqImageView.translatesAutoresizingMaskIntoConstraints = false
         izqImageView.contentMode = .scaleAspectFit
+        izqImageView.isUserInteractionEnabled = true
         view.addSubview(izqImageView)
 
         NSLayoutConstraint.activate([
             izqImageView.centerYAnchor.constraint(equalTo: nivel1ImageView.centerYAnchor),
             izqImageView.trailingAnchor.constraint(equalTo: nivel1ImageView.leadingAnchor, constant: view.bounds.width * 0.15),
             izqImageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.15),
-            izqImageView.heightAnchor.constraint(equalTo: izqImageView.widthAnchor)
-        ])
+                    izqImageView.heightAnchor.constraint(equalTo: izqImageView.widthAnchor)
+                ])
 
+        let leftTap = UITapGestureRecognizer(target: self, action: #selector(showPreviousSprite))
+        izqImageView.addGestureRecognizer(leftTap)
+        
         let derImageView = UIImageView(image: UIImage(named: "DER"))
-        derImageView.translatesAutoresizingMaskIntoConstraints = false
-        derImageView.contentMode = .scaleAspectFit
-        view.addSubview(derImageView)
+                derImageView.translatesAutoresizingMaskIntoConstraints = false
+                derImageView.contentMode = .scaleAspectFit
+                derImageView.isUserInteractionEnabled = true
+                view.addSubview(derImageView)
 
         NSLayoutConstraint.activate([
             derImageView.centerYAnchor.constraint(equalTo: nivel1ImageView.centerYAnchor),
             derImageView.leadingAnchor.constraint(equalTo: nivel1ImageView.trailingAnchor, constant: -view.bounds.width * 0.15),
             derImageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.15),
             derImageView.heightAnchor.constraint(equalTo: derImageView.widthAnchor)
-        ])
+                ])
 
-        
+        let rightTap = UITapGestureRecognizer(target: self, action: #selector(showNextSprite))
+                derImageView.addGestureRecognizer(rightTap)
+
         NSLayoutConstraint.activate([
             nutriImageView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -110),
-            nutriImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: view.bounds.width * 0.06),
+            nutriImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: view.bounds.width * -0.09),
             nutriImageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.75),
             nutriImageView.heightAnchor.constraint(equalTo: nutriImageView.widthAnchor)
         ])
@@ -108,9 +122,44 @@ class ViewController: UIViewController {
         ])
         
     }
+
+    @objc func showPreviousSprite() {
+        currentIndex = (currentIndex - 1 < 1) ? maxNivel : currentIndex - 1
+        nivel1ImageView.image = UIImage(named: "Nivel\(currentIndex)")
+    }
+    
+    @objc func showNextSprite() {
+        currentIndex = (currentIndex + 1 > maxNivel) ? 1 : currentIndex + 1
+        nivel1ImageView.image = UIImage(named: "Nivel\(currentIndex)")
+    }
+    
     @objc func goToAhorcado() {
-            let ahorcadoVC = AhorcadoViewController()
-            ahorcadoVC.modalPresentationStyle = .fullScreen
-            present(ahorcadoVC, animated: true, completion: nil)
+        let ahorcadoVC = AhorcadoViewController()
+        ahorcadoVC.modalPresentationStyle = .fullScreen
+        present(ahorcadoVC, animated: true, completion: nil)
+    }
+    
+    @objc func goToClasificar() {
+        let clasificarVC = ClasificarViewController()
+        clasificarVC.modalPresentationStyle = .fullScreen
+        present(clasificarVC, animated: true, completion: nil)
+    }
+    @objc func goToLicuado() {
+        let licuadoVC = LicuadoViewController()
+        licuadoVC.modalPresentationStyle = .fullScreen
+        present(licuadoVC, animated: true, completion: nil)
+    }
+    @objc func handleNivelTap() {
+        switch currentIndex {
+        case 1:
+            goToAhorcado()
+        case 2:
+            goToLicuado()
+        case 3:
+            goToClasificar()
+        default:
+            break
         }
+    }
+
 }

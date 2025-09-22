@@ -22,7 +22,7 @@ class DescansoViewController: UIViewController {
         flechaImageView.isUserInteractionEnabled = true
         flechaImageView.contentMode = .scaleAspectFit
         view.addSubview(flechaImageView)
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(goToNiveles))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(goToPadres))
         flechaImageView.addGestureRecognizer(tapGesture)
         
         NSLayoutConstraint.activate([
@@ -93,9 +93,9 @@ class DescansoViewController: UIViewController {
         ])
     }
     
-    @objc func goToNiveles() {
-            let nivelesVC = ViewController()
-            nivelesVC.modalPresentationStyle = .fullScreen
-            present(nivelesVC, animated: true, completion: nil)
+    @objc func goToPadres() {
+            let padresVC = PadresViewController()
+            padresVC.modalPresentationStyle = .fullScreen
+            present(padresVC, animated: true, completion: nil)
         }
 }
