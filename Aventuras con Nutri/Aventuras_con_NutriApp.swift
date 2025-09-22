@@ -7,13 +7,11 @@
 
 import SwiftUI
 
-import SwiftUI
-
 @main
 struct Aventuras_con_NutriApp: App {
     var body: some Scene {
         WindowGroup {
-            ParentsView()   
+            PlateGameView()
         }
     }
 }

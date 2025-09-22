@@ -38,4 +38,12 @@
  "profile_name_placeholder" = "María García Lopez";
  "weight_header_date" = "Fecha";
  "weight_header_value" = "Peso (kg)";
+
+/// PADRES - MENÚ
+"parents_section_title" = "PADRES";
+"parents_menu_progress" = "PROGRESO";
+"parents_menu_weight_height" = "PESO/TALLA";
+"parents_menu_tips" = "CONSEJOS Y RECETAS";
+"parents_menu_playtime" = "TIEMPO DE JUEGO";
+
 */

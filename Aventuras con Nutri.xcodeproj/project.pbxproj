@@ -22,6 +22,13 @@
 		301EE2C42E80AD7100EBD66D /* MemoryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301EE2C32E80AD6800EBD66D /* MemoryCardView.swift */; };
 		301EE2C92E80ADD400EBD66D /* MemoryGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301EE2C82E80ADD300EBD66D /* MemoryGameView.swift */; };
 		301EE2CB2E80AF7900EBD66D /* ParentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301EE2CA2E80AF7100EBD66D /* ParentsView.swift */; };
+		301EE2E22E80FF9200EBD66D /* ParentsMenultem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301EE2E12E80FF8400EBD66D /* ParentsMenultem.swift */; };
+		301EE2E42E80FFC200EBD66D /* ParentsMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301EE2E32E80FFBA00EBD66D /* ParentsMenuView.swift */; };
+		301EE2E62E80FFF000EBD66D /* ParentsProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301EE2E52E80FFDE00EBD66D /* ParentsProgressView.swift */; };
+		301EE2E82E81001900EBD66D /* ParentsWeightHeightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301EE2E72E81000100EBD66D /* ParentsWeightHeightView.swift */; };
+		301EE2EA2E81003000EBD66D /* ParentsTipsRecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301EE2E92E81002E00EBD66D /* ParentsTipsRecipesView.swift */; };
+		301EE2EC2E81004400EBD66D /* ParentsPlaytimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301EE2EB2E81004200EBD66D /* ParentsPlaytimeView.swift */; };
+		301EE2EF2E81038200EBD66D /* PlateGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301EE2EE2E81037500EBD66D /* PlateGameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +47,13 @@
 		301EE2C32E80AD6800EBD66D /* MemoryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryCardView.swift; sourceTree = "<group>"; };
 		301EE2C82E80ADD300EBD66D /* MemoryGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameView.swift; sourceTree = "<group>"; };
 		301EE2CA2E80AF7100EBD66D /* ParentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentsView.swift; sourceTree = "<group>"; };
+		301EE2E12E80FF8400EBD66D /* ParentsMenultem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentsMenultem.swift; sourceTree = "<group>"; };
+		301EE2E32E80FFBA00EBD66D /* ParentsMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentsMenuView.swift; sourceTree = "<group>"; };
+		301EE2E52E80FFDE00EBD66D /* ParentsProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentsProgressView.swift; sourceTree = "<group>"; };
+		301EE2E72E81000100EBD66D /* ParentsWeightHeightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentsWeightHeightView.swift; sourceTree = "<group>"; };
+		301EE2E92E81002E00EBD66D /* ParentsTipsRecipesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentsTipsRecipesView.swift; sourceTree = "<group>"; };
+		301EE2EB2E81004200EBD66D /* ParentsPlaytimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentsPlaytimeView.swift; sourceTree = "<group>"; };
+		301EE2EE2E81037500EBD66D /* PlateGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateGameView.swift; sourceTree = "<group>"; };
 		30C8B2A32E80928D0008E0C2 /* Aventuras con Nutri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Aventuras con Nutri.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -77,10 +91,17 @@
 			path = Memory;
 			sourceTree = "<group>";
 		};
+		301EE2ED2E81036800EBD66D /* Plate */ = {
+			isa = PBXGroup;
+			children = (
+				301EE2EE2E81037500EBD66D /* PlateGameView.swift */,
+			);
+			path = Plate;
+			sourceTree = "<group>";
+		};
 		30C8B29A2E80928D0008E0C2 = {
 			isa = PBXGroup;
 			children = (
-				30C8B2B62E80957B0008E0C2 /* Strings */,
 				30C8B2B52E8094AE0008E0C2 /* Resources */,
 				30C8B2B42E8094A70008E0C2 /* UI */,
 				30C8B2B22E80948B0008E0C2 /* Features */,
@@ -100,6 +121,7 @@
 		30C8B2B22E80948B0008E0C2 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				301EE2ED2E81036800EBD66D /* Plate */,
 				301EE2C52E80ADA800EBD66D /* Memory */,
 				301EE2BC2E80A95B00EBD66D /* Splash */,
 				30C8B2BC2E80960B0008E0C2 /* Home */,
@@ -122,6 +144,7 @@
 		30C8B2B52E8094AE0008E0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				30C8B2B62E80957B0008E0C2 /* Strings */,
 				301EE29D2E80994E00EBD66D /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -150,6 +173,7 @@
 		30C8B2BA2E8095E90008E0C2 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				301EE2E12E80FF8400EBD66D /* ParentsMenultem.swift */,
 				301EE2C32E80AD6800EBD66D /* MemoryCardView.swift */,
 				301EE2BF2E80AA2200EBD66D /* GlassPanel.swift */,
 				301EE2BA2E80A87400EBD66D /* CardContainer.swift */,
@@ -177,6 +201,11 @@
 		30C8B2BD2E80960F0008E0C2 /* Parents */ = {
 			isa = PBXGroup;
 			children = (
+				301EE2EB2E81004200EBD66D /* ParentsPlaytimeView.swift */,
+				301EE2E92E81002E00EBD66D /* ParentsTipsRecipesView.swift */,
+				301EE2E72E81000100EBD66D /* ParentsWeightHeightView.swift */,
+				301EE2E52E80FFDE00EBD66D /* ParentsProgressView.swift */,
+				301EE2E32E80FFBA00EBD66D /* ParentsMenuView.swift */,
 				301EE2CA2E80AF7100EBD66D /* ParentsView.swift */,
 			);
 			path = Parents;
@@ -266,12 +295,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				301EE2B92E80A84F00EBD66D /* SecondaryButton.swift in Sources */,
+				301EE2EC2E81004400EBD66D /* ParentsPlaytimeView.swift in Sources */,
 				301EE2C02E80AA2500EBD66D /* GlassPanel.swift in Sources */,
+				301EE2EA2E81003000EBD66D /* ParentsTipsRecipesView.swift in Sources */,
+				301EE2E42E80FFC200EBD66D /* ParentsMenuView.swift in Sources */,
 				301EE2BB2E80A87500EBD66D /* CardContainer.swift in Sources */,
 				301EE2B22E80A7CC00EBD66D /* AppTheme.swift in Sources */,
+				301EE2E82E81001900EBD66D /* ParentsWeightHeightView.swift in Sources */,
+				301EE2E22E80FF9200EBD66D /* ParentsMenultem.swift in Sources */,
 				301EE2B42E80A7D400EBD66D /* Shapes.swift in Sources */,
+				301EE2E62E80FFF000EBD66D /* ParentsProgressView.swift in Sources */,
 				301EE2CB2E80AF7900EBD66D /* ParentsView.swift in Sources */,
 				301EE2BE2E80A9AF00EBD66D /* HomeView.swift in Sources */,
+				301EE2EF2E81038200EBD66D /* PlateGameView.swift in Sources */,
 				301EE2C42E80AD7100EBD66D /* MemoryCardView.swift in Sources */,
 				301EE2B62E80A7DB00EBD66D /* Colors.swift in Sources */,
 				301EE2C92E80ADD400EBD66D /* MemoryGameView.swift in Sources */,
