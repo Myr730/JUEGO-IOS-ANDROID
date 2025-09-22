@@ -21,7 +21,7 @@ class ClasificarViewController: UIViewController {
         flechaImageView.isUserInteractionEnabled = true
         flechaImageView.contentMode = .scaleAspectFit
         view.addSubview(flechaImageView)
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(goToNiveles))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(goToDescanso))
         flechaImageView.addGestureRecognizer(tapGesture)
         
         NSLayoutConstraint.activate([
@@ -178,9 +178,9 @@ class ClasificarViewController: UIViewController {
 
         
     }
-    @objc func goToNiveles() {
-            let nivelesVC = ViewController()
-            nivelesVC.modalPresentationStyle = .fullScreen
-            present(nivelesVC, animated: true, completion: nil)
+    @objc func goToDescanso() {
+            let descansoVC = DescansoViewController()
+            descansoVC.modalPresentationStyle = .fullScreen
+            present(descansoVC, animated: true, completion: nil)
         }
 }
