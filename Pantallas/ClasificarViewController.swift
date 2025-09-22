@@ -161,7 +161,7 @@ class ClasificarViewController: UIViewController {
         
         let basketLabels = ["DIARIO", "A VECES", "OCASIONAL"]
 
-        /Users/karolanette/Downloads/Xcode Projects        for (index, basket) in baskets.enumerated() {
+        for (index, basket) in baskets.enumerated() {
             let topLabel = UILabel()
             topLabel.text = basketLabels[index]
             topLabel.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
