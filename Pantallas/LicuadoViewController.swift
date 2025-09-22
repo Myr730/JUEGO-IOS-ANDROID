@@ -22,7 +22,7 @@ class LicuadoViewController: UIViewController {
         flechaImageView.isUserInteractionEnabled = true
         flechaImageView.contentMode = .scaleAspectFit
         view.addSubview(flechaImageView)
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(goToNiveles))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(goToClasificar))
         flechaImageView.addGestureRecognizer(tapGesture)
         
         NSLayoutConstraint.activate([
@@ -122,9 +122,9 @@ class LicuadoViewController: UIViewController {
                 }
         
     }
-    @objc func goToNiveles() {
-            let nivelesVC = ViewController()
-            nivelesVC.modalPresentationStyle = .fullScreen
-            present(nivelesVC, animated: true, completion: nil)
+    @objc func goToClasificar() {
+            let clasificarVC = ClasificarViewController()
+            clasificarVC.modalPresentationStyle = .fullScreen
+            present(clasificarVC, animated: true, completion: nil)
         }
 }
