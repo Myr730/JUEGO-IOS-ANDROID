@@ -35,7 +35,7 @@ class AhorcadoViewController: UIViewController {
         flechaImageView.isUserInteractionEnabled = true
         flechaImageView.contentMode = .scaleAspectFit
         view.addSubview(flechaImageView)
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(goToMemorama))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(goToLicuado))
         flechaImageView.addGestureRecognizer(tapGesture)
         
         NSLayoutConstraint.activate([
@@ -120,9 +120,9 @@ class AhorcadoViewController: UIViewController {
             lettersStack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ])
     }
-    @objc func goToMemorama() {
-            let memoramaVC = MemoramaViewController()
-            memoramaVC.modalPresentationStyle = .fullScreen
-            present(memoramaVC, animated: true, completion: nil)
+    @objc func goToLicuado() {
+            let licuadoVC = LicuadoViewController()
+            licuadoVC.modalPresentationStyle = .fullScreen
+            present(licuadoVC, animated: true, completion: nil)
         }
 }
